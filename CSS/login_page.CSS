@@ -1,0 +1,53 @@
+
+body{
+    background-image: url(../Books_imgs/books-1163695.jpg);
+    background-position: right ;
+  
+   
+
+}
+.lt_book{
+    padding-top: 75px;
+    
+    display: flex;
+    align-items: center;
+   justify-content: left;
+
+   animation-delay: 50ms;
+    
+
+  
+}
+
+.book{
+
+    padding-left: 300px;
+
+}
+
+#login_title{
+
+
+    animation-delay: 100ms;
+
+}
+
+.formulario{
+
+    width: 430px;
+    margin: 0 auto;
+
+    animation-delay: 150ms;
+
+}
+
+.under_enter{
+    height: 50px;
+
+    display:flex;
+    text-align: center;
+    justify-content: space-between;
+
+    animation-delay: 200ms;    
+    
+}
