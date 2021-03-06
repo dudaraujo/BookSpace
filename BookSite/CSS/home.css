@@ -1,0 +1,34 @@
+#first-bar{
+    height: 40px;
+    background-color: #d3d1c6;
+
+    
+}
+#second-bar{
+    height: 40px;
+
+}
+#second-bar a{
+    color: black;
+
+}
+#col{
+    padding-left: 390px;
+}
+#space{
+    padding-left: 700px
+}
+#transition{
+    height: 3px;
+    background-color: black;
+}
+#links{
+    padding-left: 70px;
+}
+#under-nav{
+    padding-top: 30px;
+}
+#carrousel{
+    padding-top: 30px;
+}
+

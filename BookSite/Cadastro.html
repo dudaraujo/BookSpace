@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/compiler/bootstrap.css"
+    />
+
+    <link rel="stylesheet" href="style/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="./CSS/nav.css">
+    <link rel="stylesheet" href="./CSS/cadastro.css">
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="navbar-brand mb-0" id="title" >
+            <a href="home.html"><img src="./Books_imgs/even_little_book.png" alt="little_book"></a> 
+            <strong><h2>BookSpace</h2></strong> 
+          </div> 
+    </nav>    
+
+    <div >
+
+      <div class="col-12 text center my-5">
+         <h1 class="text-center"> Cadastre-se</h1>
+      </div>
+    </div>  
+    <div class="row justify-content-center mb-5">
+
+      <div class="col-sm-12 col-md-10 col-lg-8">
+
+     
+      <form method="POST" action="banco/novoUsuario.php">
+
+       <div class="form row">
+         <div class="form-group col-sm-12">
+            <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
+         </div>
+       </div>        
+
+       <div class="form row">
+               <div class="form-group col-sm-6">
+                  <input type="text" class="form-control" id="inputEnd" placeholder="CPF" name="cpf">
+               </div>
+
+               <div class="form-group col-sm-6">
+                  <input type="text" class="form-control" id="inputCEP" placeholder="RG" name="rg">
+               </div>
+       </div>         
+             <div class="form row">     
+               <div class="form-group col-sm-6">
+                  <input type="text" class="form-control" id="inputTel" placeholder="Telefone" name="telefone">                      
+               </div>
+
+               <div class="form-group col-sm-6">
+                  <input type="text" class="form-control" id="inputTel" placeholder="E-mail" name="email">                      
+                </div>
+             </div>
+
+             <div class="form row">  
+                <div class="form-group col-sm-12">
+                  <input type="text" class="form-control" id="inputNome" placeholder="Cidade" name="cidade">
+                </div>
+            </div> 
+
+            <div class="form row">  
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" id="inputNome" placeholder="CEP" name="cep">
+              </div>
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" id="inputEnd" placeholder="Bairro"name="bairro">
+             </div>
+          </div> 
+
+          <div class="form row">  
+            <div class="form-group col-sm-6">
+              <input type="text" class="form-control" id="inputNome" placeholder="Número" name="numero">
+            </div>
+            <div class="form-group col-sm-6">
+              <input type="text" class="form-control" id="inputEnd" placeholder="Complemento" name="complemento">
+           </div>
+        </div> 
+
+        <div class="form row">  
+          <div class="form-group col-sm-6">
+            <input type="text" class="form-control" id="inputNome" placeholder="Senha" name="senha">
+          </div>
+        <div class="form-group col-sm-6">
+          <input type="text" class="form-control" id="inputNome" placeholder="Confirmar Senha" name="confSenha">
+        </div>
+        <br>  <br>  <br>  <br>
+    </div> 
+                  
+
+         
+         <div id="button_2">
+          <div id="button_1">
+            <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
+          </div>
+        </div>
+         
+       </div>
+      </form>
+
+    </div>
+
+    
+    <div class="row" id="footer"></div>
+</div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>
