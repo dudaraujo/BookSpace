@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/compiler/bootstrap.css"
+    />
+
+    <link rel="stylesheet" href="style/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="CSS/nav.css" />
+    <link rel="stylesheet" href="CSS/home.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" id="first-bar">
+        <div class="col-sm-8" id="col"></div>
+        <div class="col-sm" id="col">
+          <a href="login.html" class="btn btn-primary" id="login">login</a>
+        </div>
+      </div>
+
+      <div class="row" id="transition"></div>
+      <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbar-brand mb-0" id="title">
+          <a href="home.html"
+            ><img
+              src="./Books_imgs/even_little_book.png"
+              class="img-fluid"
+              alt="little_book"
+          /></a>
+          <strong><h2>BookSpace</h2></strong>
+        </div>
+        <div class="col-sm" id="space">
+          <form>
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Pesquisar livro"
+            />
+          </form>
+        </div>
+      </nav>
+      <div class="row" id="transition"></div>
+      <div class="row" id="second-bar">
+        <div class="col-sm" id="links">
+          <a href="#"
+            ><strong><h3>Novidades</h3></strong></a
+          >
+        </div>
+        <div class="col-sm">
+          <a href="#"
+            ><strong><h3>Livreiros</h3></strong></a
+          >
+        </div>
+        <div class="col-sm">
+          <a href="#"
+            ><strong><h3>Categorias</h3></strong></a
+          >
+        </div>
+        <div class="col-sm">
+          <a href="./Cadastro_livro.html"
+            ><strong><h3>Cadastrar</h3></strong></a
+          >
+        </div>
+        <div class="col-sm">
+          <a href="#"
+            ><strong><h3>destaques</h3></strong>
+          </a>
+        </div>
+      </div>
+      <div class="row" id="transition"></div>
+
+      <div id="under-nav">
+        <div class="col-sm">
+          <strong><h3>destaques</h3></strong>
+        </div>
+      </div>
+
+      <div id="carrousel">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=1"
+                  alt="1"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=2"
+                  alt="2"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=3"
+                  alt="3"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=4"
+                  alt="4"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=5"
+                  alt="5"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=6"
+                  alt="6"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=7"
+                  alt="7"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+
+              <div class="col-3 float-left">
+                <img
+                  class="d-block w-100"
+                  src="https://placehold.it/900x450&text=8"
+                  alt="8"
+                />
+                <p>Nome: </p>
+                <p>por: R$ </p>
+              </div>
+            </div>
+
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

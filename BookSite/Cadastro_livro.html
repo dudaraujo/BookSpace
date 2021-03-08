@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livro</title>
+
+    <link
+    rel="stylesheet"
+    href="node_modules/bootstrap/compiler/bootstrap.css"
+  />
+
+  <link rel="stylesheet" href="style/css/style.css" />
+
+  <link
+    rel="stylesheet"
+    href="node_modules/font-awesome/css/font-awesome.css"
+  />
+  <link rel="stylesheet" href="CSS/nav.css" />
+  <link rel="stylesheet" href="CSS/home.css" />
+  <link rel="stylesheet" href="CSS/cadastro_livro.CSS">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="row" id="first-bar">
+          <div class="col-sm-8" id="col"></div>
+          <div class="col-sm" id="col">
+            <a href="login.html" class="btn btn-primary" id="login">login</a>
+          </div>
+        </div>
+  
+        <div class="row" id="transition"></div>
+        <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="navbar-brand mb-0" id="title">
+            <a href="home.html"
+              ><img
+                src="./Books_imgs/even_little_book.png"
+                class="img-fluid"
+                alt="little_book"
+            /></a>
+            <strong><h2>BookSpace</h2></strong>
+          </div>
+          <div class="col-sm" id="space">
+            <form>
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Pesquisar livro"
+              />
+            </form>
+          </div>
+        </nav>
+        <div class="row" id="transition"></div>
+        <div class="row" id="second-bar">
+          <div class="col-sm" id="links">
+            <a href="#"
+              ><strong><h3>Novidades</h3></strong></a
+            >
+          </div>
+          <div class="col-sm">
+            <a href="#"
+              ><strong><h3>Livreiros</h3></strong></a
+            >
+          </div>
+          <div class="col-sm">
+            <a href="#"
+              ><strong><h3>Categorias</h3></strong></a
+            >
+          </div>
+          <div class="col-sm">
+            <a href="#"
+              ><strong><h3>Cadastrar</h3></strong></a
+            >
+          </div>
+          <div class="col-sm">
+            <a href="#"
+              ><strong><h3>destaques</h3></strong>
+            </a>
+          </div>
+        </div>
+        <div class="row" id="transition"></div>
+
+
+
+        <div >
+
+            <div class="col-12 text center my-5">
+               <h1 class="text-center"> Cadastre o livro</h1>
+            </div>
+          </div>  
+          <div class="row justify-content-center mb-5">
+      
+            <div class="col-sm-12 col-md-10 col-lg-8">
+      
+           
+            <form method="POST">
+      
+             <div class="form row">
+               <div class="form-group col-sm-6">
+                  <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+               </div>
+               <div class="form-group col-sm-6">
+                <input type="text" class="form-control" id="inputAuthor" placeholder="Autor">
+             </div>
+             </div>        
+      
+             <div class="form row">
+                     <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" id="inputEditor" placeholder="Editora">
+                     </div>
+      
+                     <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" id="inputGender" placeholder="Gênero">
+                     </div>
+             </div>         
+                   <div class="form row">     
+                     <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" id="inputLang" placeholder="Idioma">                      
+                     </div>
+      
+                     <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" id="inputQuant" placeholder="Quantidade de páginas">                      
+                      </div>
+                   </div>
+      
+                   <div class="form row">  
+                      <div class="form-group col-sm-3">
+                        <input type="text" class="form-control" id="inputweight" placeholder="Peso">
+                      </div>
+                      <div class="form-group col-sm-3">
+                        <input type="text" class="form-control" id="inputHeight" placeholder="Altura">
+                      </div>
+                      <div class="form-group col-sm-3">
+                        <input type="text" class="form-control" id="inputEdition" placeholder="Edição">
+                      </div>
+                      <div class="form-group col-sm-3">
+                        <input type="text" class="form-control" id="inputYear" placeholder="Ano">
+                      </div>
+                  </div> 
+      
+            
+      
+              
+      
+              <div class="form row">  
+                <div class="form-group col-sm-6">
+                  <label for='selecao-arquivo'> <img src="./Books_imgs/adicionar_foto.jpeg" class="img-thumbnail" id="input_img"></label>
+                  <input id='selecao-arquivo' type='file' class="upload">
+                    <img class="img-thumbnail" id="show_img">
+                </div>
+              <div class="form-group col-sm-6">
+                <input type="text" class="form-control" id="inputNome" placeholder="Valor R$">
+               
+              </div>
+              <br>  <br>  <br>  <br>
+          </div> 
+                        
+      
+               
+               <div id="button_2">
+                <div id="button_1">
+                  <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
+                </div>
+              </div>
+               
+             </div>
+            </form>
+      
+          </div>
+      
+          
+          <div class="row" id="footer"></div>
+      </div>
+
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+        <script src="./scripts/Image_show.js"> </script>
+</body>
+</html>

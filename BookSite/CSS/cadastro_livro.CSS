@@ -1,0 +1,27 @@
+#button_1{
+    width: 25%;
+}
+#button_2{
+    display: flex;
+    justify-content: center;
+}
+#footer{
+    height: 90px;
+    background-color: #007bff;
+}
+#show_img{
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
+input[type='file'] {
+    display: none
+  }
+#input_img{
+    max-width:400px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}  
