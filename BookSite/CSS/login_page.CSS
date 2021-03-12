@@ -7,11 +7,7 @@ body{
 
 }
 .lt_book{
-    padding-top: 75px;
-    
-    display: flex;
-    align-items: center;
-   justify-content: left;
+  padding-top: 75px;
 
    animation-delay: 50ms;
     
