@@ -21,12 +21,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="lt_book animate-up">
+      <div class="d-flex align-items-center justify-content-left lt_book animate-up">
         <div class="book">
           <a href="home.html"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
         </div>
         <div class="written">
-          <h1 class="text-light" id="words">Bookspace</h1>
+          <h1 class="text-light">Bookspace</h1>
         </div>
       </div>
 
@@ -35,13 +35,12 @@
       </div>
 
       <div class="formulario animate-up">
-        <form method="POST" action="banco/veriLogin.php">
+        <form method="POST">
           <div class="form-group">
             <input
               type="email"
               class="form-control form-control-lg"
               id="email"
-              name="email"
               aria-describedby="emailHelp"
               placeholder="e-mail/usuário"
             />
@@ -52,7 +51,6 @@
               type="password"
               class="form-control form-control-lg"
               id="password"
-              name="senha"
               placeholder="senha"
             />
           </div>
