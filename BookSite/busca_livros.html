@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalhes</title>
+    <title>Buscar livros</title>
 
     <link
       rel="stylesheet"
@@ -21,78 +21,49 @@
     <link rel="stylesheet" href="CSS/busca_livro.CSS" />
   </head>
 
-  <body class="main">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <div class="container-fluid">
-          <div class="row" id="first-bar">
-            <div class="col-sm-8" id="col"></div>
-            <div class="col-sm" id="col">
-              <a href="login.html" class="btn btn-primary" id="login">login</a>
-            </div>
-          </div>
-
-          <div class="row" id="transition"></div>
-          <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="navbar-brand mb-0" id="title">
-              <a href="home.html"
-                ><img
-                  src="./Books_imgs/even_little_book.png"
-                  class="img-fluid"
-                  alt="little_book"
-              /></a>
-              <strong>
-                <h2>BookSpace</h2>
-              </strong>
-            </div>
-            <div class="col-sm space">
-              <form>
-                <input
-                  class="form-control"
-                  type="search"
-                  placeholder="Pesquisar livro"
-                />
-              </form>
-            </div>
-          </nav>
-          <div class="row" id="transition"></div>
-          <div class="row" id="second-bar">
-            <div class="col-md ml-4" >
-              <a href="#"
-                ><strong>
-                  <h3>Novidades</h3>
-                </strong></a
-              >
-            </div>
-            <div class="col-md">
-              <a href="#"
-                ><strong>
-                  <h3>Livreiros</h3>
-                </strong></a
-              >
-            </div>
-            <div class="col-md">
-              <a href="#"
-                ><strong>
-                  <h3>Categorias</h3>
-                </strong></a
-              >
-            </div>
-            <div class="col-md">
-              <a href="./Cadastro_livro.html"
-                ><strong>
-                  <h3>Cadastrar</h3>
-                </strong></a
-              >
-            </div>
-            <div class="col-md">
-              <a href="#"
-                ><strong>
-                  <h3>destaques</h3>
-                </strong>
-              </a>
-            </div>
-          </div>
-          <div class="row" id="transition"></div>
-
+      <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+          <a href="home.html"
+            ><img
+              src="./Books_imgs/even_little_book.png"
+              class="img-fluid"
+              alt="little_book"
+          /></a>
+          <strong><h2 class="pt-1">BookSpace</h2></strong>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsite">
+            <ul class="navbar-nav mr-auto">
+               
+                <li class="nav-item">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./livro_cadastro.html">Cadastrar</a>
+                            <a class="dropdown-item" href="./dados_usuario.html">Minha conta</a>
+                            <a class="dropdown-item" href="./busca_livros.html">Categorias</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+           
+            <form class="form-inline">
+                <input class="form-control ml-2 " type="search" placeholder="search...">
+                <button class="btn btn-warning" type="subtmit">search</button>
+                <a href="login.html" class="btn btn-primary ml-3" id="login">login</a>
+            </form>
+        </div>
+    </div>
+  </nav>
+    <div class="container-fluid">
           <div class="container" id="categories_content">
             <div class="row mt-4">
               <div class="col-md-3">
@@ -117,17 +88,17 @@
               <div class="col-md-9" id="results_cards">
                 <div class="card mb-4">
                   <div class="card-body d-flex ">
-                    <div class="books mr-5">
-                    <img src="./Books_imgs/Diario_banana.jpg" alt="livro">
+                    <div class="h-auto w-auto">
+                      <img class="d-block w-50" src="./Books_imgs/Diario_banana.jpg" >
                     </div>
                       <div class="book_information">
-                        <div class="book_title mb-3">
+                        <div class="book_title mb-">
                           <h4 class="card-title">Diário de um banana</h4>
                         </div>
-                            <div class="price mb-5">
+                            <div class="price mb-">
                               <h5>R$</h5>
                             </div>
-                            <div class="location mb-4">
+                            <div class="location mb-">
                               <p>São paulo,Taboão</p>
                             </div>
                             <div class="visit_button">
@@ -138,17 +109,17 @@
                 </div>
                 <div class="card mb-4">
                   <div class="card-body d-flex ">
-                    <div class="books mr-5">
-                    <img src="./Books_imgs/Diario_banana.jpg" alt="livro">
+                    <div class="h-auto w-auto">
+                      <img class="d-block w-50" src="./Books_imgs/Diario_banana.jpg" >
                     </div>
                       <div class="book_information">
-                        <div class="book_title mb-3">
+                        <div class="book_title mb-">
                           <h4 class="card-title">Diário de um banana</h4>
                         </div>
-                            <div class="price mb-5">
+                            <div class="price mb-">
                               <h5>R$</h5>
                             </div>
-                            <div class="location mb-4">
+                            <div class="location mb-">
                               <p>São paulo,Taboão</p>
                             </div>
                             <div class="visit_button">
@@ -159,17 +130,17 @@
                 </div>
                 <div class="card mb-4">
                   <div class="card-body d-flex ">
-                    <div class="books mr-5">
-                    <img src="./Books_imgs/Diario_banana.jpg" alt="livro">
+                    <div class="h-auto w-auto">
+                      <img class="d-block w-50" src="./Books_imgs/Diario_banana.jpg" >
                     </div>
                       <div class="book_information">
-                        <div class="book_title mb-3">
+                        <div class="book_title mb-">
                           <h4 class="card-title">Diário de um banana</h4>
                         </div>
-                            <div class="price mb-5">
+                            <div class="price mb-">
                               <h5>R$</h5>
                             </div>
-                            <div class="location mb-4">
+                            <div class="location mb-">
                               <p>São paulo,Taboão</p>
                             </div>
                             <div class="visit_button">
@@ -186,5 +157,9 @@
             </div>
           </div>
     </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   </body>
 </html>
