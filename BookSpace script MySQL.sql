@@ -40,9 +40,9 @@ REFERENCES Dados (Cod_Dados);
 CREATE TABLE Livro (
 Cod_Livro int not null primary key auto_increment,
 Nome_Livro varchar(50) not null,
-Ano date not null,
-Peso decimal not null,
-Altura decimal not null,
+Ano date,
+Peso decimal,
+Altura decimal,
 Quant_Pag int not null,
 Edicao varchar(10) not null,
 Descricao varchar(500) not null,
@@ -100,6 +100,43 @@ ALTER TABLE BookImg
 ADD CONSTRAINT fk_Livro_BookImg
 FOREIGN KEY (Cod_Livro)
 REFERENCES Livro (Cod_Livro);
+
+ALTER TABLE Livro
+MODIFY COLUMN Ano int;
+
+ALTER TABLE Livro
+DROP CONSTRAINT fk_Genero_Livro;
+
+ALTER TABLE Livro
+DROP COLUMN Cod_Genero;
+
+ALTER TABLE Genero
+ADD Cod_Livro int not null;
+
+ALTER TABLE Genero
+ADD CONSTRAINT fk_Livro_Genero
+FOREIGN KEY (Cod_Livro)
+REFERENCES Livro(Cod_Livro);
+
+ALTER TABLE BookImg
+DROP COLUMN referencia_BookImg;
+
+ALTER TABLE Livro
+DROP CONSTRAINT fk_Dados_Livro;
+
+ALTER TABLE Livro
+DROP COLUMN Cod_Dados;
+
+ALTER TABLE Livro
+ADD COLUMN Cod_Usuario int not null;
+
+ALTER TABLE Livro
+ADD CONSTRAINT fk_Usuario_Livro
+FOREIGN KEY (Cod_Usuario)
+REFERENCES Usuario(Cod_Usuario);
+
+
+
 
 
 
