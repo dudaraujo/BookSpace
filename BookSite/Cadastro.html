@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados usuário</title>
+  <title>Cadastro</title>
 
   <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css" />
 
@@ -16,17 +16,48 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container-fluid">
+      <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+          <a href="home.html"
+            ><img
+              src="./Books_imgs/even_little_book.png"
+              class="img-fluid"
+              alt="little_book"
+          /></a>
+          <strong><h2 class="pt-1">BookSpace</h2></strong>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsite">
+            <ul class="navbar-nav mr-auto">
+               
+                <li class="nav-item">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./livro_cadastro.html">Cadastrar</a>
+                                <a class="dropdown-item" href="./dados_usuario.html">Minha conta</a>
+                                <a class="dropdown-item" href="./busca_livros.html">Categorias</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+           
+            <form class="form-inline">
+                <input class="form-control ml-2 " type="search" placeholder="search...">
+                <button class="btn btn-warning" type="subtmit">search</button>
+                <a href="login.html" class="btn btn-primary ml-3" id="login">login</a>
+            </form>
+        </div>
+    </div>
+  </nav>
   <div class="container-fluid">
-    <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="navbar-brand mb-0" id="title">
-        <a href="home.html"><img src="./Books_imgs/even_little_book.png" alt="little_book"></a>
-        <strong>
-          <h2>BookSpace</h2>
-        </strong>
-      </div>
-    </nav>
-
-
     <div class="col-12 text center my-5">
       <h1 class="text-center">Cadastre-se</h1>
     </div>
@@ -35,55 +66,55 @@
       <div class="col-sm-12 col-md-10 col-lg-8">
         <form method="POST">
           <div class="form row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col-md-12">
               <input type="text" class="form-control" id="inputNome" placeholder="Nome">
             </div>
           </div>
 
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputEnd" placeholder="CPF">
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputCEP" placeholder="RG">
             </div>
           </div>
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputTel" placeholder="Telefone">
             </div>
 
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputTel" placeholder="E-mail">
             </div>
           </div>
 
           <div class="form row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col-md-12">
               <input type="text" class="form-control" id="inputNome" placeholder="Cidade">
             </div>
           </div>
 
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputNome" placeholder="CEP">
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputEnd" placeholder="Bairro">
             </div>
           </div>
 
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputNome" placeholder="Número">
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputEnd" placeholder="Complemento">
             </div>
           </div>
 
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <div class="input-group md-3">
                 <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" >
                 <div class="input-group-append">
@@ -95,7 +126,7 @@
                 </div>
               </div>
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-md-6">
               <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha">
             </div>
             <br> <br> <br> <br>
@@ -116,9 +147,9 @@
     </div>
 
 
-    <div class="row" id="footer"></div>
+    
   </div>
-
+  <footer class="row bg-primary" id="footer"></footer>
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>

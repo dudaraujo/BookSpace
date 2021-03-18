@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados usuário</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de livro</title>
   <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css" />
 
   <link rel="stylesheet" href="style/css/style.css" />
 
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css" />
-  <link rel="stylesheet" href="./CSS/nav.css">
-  <link rel="stylesheet" href="./CSS/cadastro.css">
+  <link rel="stylesheet" href="CSS/nav.css" />
+  <link rel="stylesheet" href="CSS/cadastro_livro.CSS">
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <div class="container-fluid">
       <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
@@ -59,82 +59,68 @@
   </nav>
   <div class="container-fluid">
     <div class="col-12 text center my-5">
-      <h1 class="text-center"> Seus Dados</h1>
+      <h1 class="text-center"> Cadastre o livro</h1>
     </div>
-
     <div class="row justify-content-center mb-5">
       <div class="col-sm-12 col-md-10 col-lg-8">
         <form method="POST">
           <div class="form row">
-            <div class="form-group col-sm-12">
+            <div class="form-group col-sm-6">
               <input type="text" class="form-control" id="inputNome" placeholder="Nome">
             </div>
-          </div>
-
-          <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="CPF">
-            </div>
-            <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputCEP" placeholder="RG">
+              <input type="text" class="form-control" id="inputAuthor" placeholder="Autor">
             </div>
           </div>
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="Telefone">
+              <input type="text" class="form-control" id="inputEditor" placeholder="Editora">
             </div>
-
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="E-mail">
+              <input type="text" class="form-control" id="inputGender" placeholder="Gênero">
             </div>
           </div>
-
           <div class="form row">
-            <div class="form-group col-sm-12">
-              <input type="text" class="form-control" id="inputNome" placeholder="Cidade">
+            <div class="form-group col-sm-6">
+              <input type="text" class="form-control" id="inputLang" placeholder="Idioma">
+            </div>
+            <div class="form-group col-sm-6">
+              <input type="text" class="form-control" id="inputQuant" placeholder="Quantidade de páginas">
             </div>
           </div>
-
           <div class="form row">
-            <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="CEP">
+            <div class="form-group col-sm-3">
+              <input type="text" class="form-control" id="inputweight" placeholder="Peso">
             </div>
-            <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="Bairro">
+            <div class="form-group col-sm-3">
+              <input type="text" class="form-control" id="inputHeight" placeholder="Altura">
+            </div>
+            <div class="form-group col-sm-3">
+              <input type="text" class="form-control" id="inputEdition" placeholder="Edição">
+            </div>
+            <div class="form-group col-sm-3">
+              <input type="text" class="form-control" id="inputYear" placeholder="Ano">
             </div>
           </div>
-
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="Número">
+              <label for='selecao-arquivo'> <img src="./Books_imgs/adicionar_foto.jpeg" class="img-thumbnail"
+                  id="input_img"></label>
+              <input id='selecao-arquivo' type='file' class="upload">
+              <img class="img-thumbnail" id="show_img">
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="Complemento">
-            </div>
-          </div>
-
-          <div class="form row">
-            <div class="form-group col-sm-6">
-              <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
-            </div>
-            <div class="form-group col-sm-6">
-              <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha">
+              <input type="text" class="form-control" id="inputNome" placeholder="Valor R$">
             </div>
             <br> <br> <br> <br>
           </div>
-
-
-
-          <div class="d-flex  justify-content-left">
-            <div class="w-auto">
-              <button type="submit" class="btn btn-warning">salvar</button>
-              <button type="submit" class="btn btn-danger">cancelar</button>
+          <div class="d-flex  justify-content-center">
+            <div class="w-25">
+              <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
             </div>
           </div>
-
-        </form>
       </div>
-
+      </form>
     </div>
   </div>
   <footer class="row bg-primary" id="footer"></footer>
@@ -143,7 +129,7 @@
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="./scripts/mostra_senha.js"></script>
-
+  <script src="./scripts/Image_show.js"></script>
 </body>
+
 </html>
