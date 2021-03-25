@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,65 +23,54 @@
     <link rel="stylesheet" href="CSS/home.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+      <div class="container-fluid">
+        <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+            <a href="home.php"
+              ><img
+                src="./Books_imgs/even_little_book.png"
+                class="img-fluid"
+                alt="little_book"
+            /></a>
+            <strong><h2 class="pt-1">BookSpace</h2></strong>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsite">
+              <ul class="navbar-nav mr-auto">
+                 
+                  <li class="nav-item">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                                  Menu
+                              </a>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="./livro_cadastro.php">Cadastrar</a>
+                                  <a class="dropdown-item" href="./dados_usuario.php">Minha conta</a>
+                                  <a class="dropdown-item" href="#">Categorias</a>
+                              </div>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+             
+              <form class="form-inline" method="get" action="busca_livros.php">
+                  <input class="form-control ml-2 " type="search" placeholder="search..." name="busca">
+                  <button class="btn btn-warning" type="subtmit">search</button>
+                  <?php
+                  if (!isset($_SESSION["usuario"])){
+                    echo "<a href='login.php' class='btn btn-primary ml-3' id='login'>login</a>";
+                  }else{
+                  echo "<a href='sair.php' class='btn btn-primary ml-3' id='login'>sair</a>";
+                  }
+                  ?>
+              </form>
+          </div>
+      </div>
+    </nav>
     <div class="container-fluid">
-      <div class="row" id="first-bar">
-        <div class="col-sm-8" id="col"></div>
-        <div class="col-sm" id="col">
-          <a href="login.html" class="btn btn-primary" id="login">login</a>
-        </div>
-      </div>
-
-      <div class="row" id="transition"></div>
-      <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="navbar-brand mb-0" id="title">
-          <a href="home.html"
-            ><img
-              src="./Books_imgs/even_little_book.png"
-              class="img-fluid"
-              alt="little_book"
-          /></a>
-          <strong><h2>BookSpace</h2></strong>
-        </div>
-        <div class="col-md space" >
-          <form>
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Pesquisar livro"
-            />
-          </form>
-        </div>
-      </nav>
-      <div class="row" id="transition"></div>
-      <div class="row" id="second-bar">
-        <div class="col-sm" id="links">
-          <a href="#"
-            ><strong><h3>Novidades</h3></strong></a
-          >
-        </div>
-        <div class="col-md">
-          <a href="#"
-            ><strong><h3>Livreiros</h3></strong></a
-          >
-        </div>
-        <div class="col-md">
-          <a href="#"
-            ><strong><h3>Categorias</h3></strong></a
-          >
-        </div>
-        <div class="col-md">
-          <a href="./Cadastro_livro.html"
-            ><strong><h3>Cadastrar</h3></strong></a
-          >
-        </div>
-        <div class="col-md">
-          <a href="#"
-            ><strong><h3>destaques</h3></strong>
-          </a>
-        </div>
-      </div>
-      <div class="row" id="transition"></div>
-
       <div class="pt-4">
         <div class="col-md">
           <strong><h3>destaques</h3></strong>
@@ -203,6 +196,8 @@
         </div>
       </div>
     </div>
+
+    
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>

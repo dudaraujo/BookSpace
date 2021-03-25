@@ -135,9 +135,16 @@ ADD CONSTRAINT fk_Usuario_Livro
 FOREIGN KEY (Cod_Usuario)
 REFERENCES Usuario(Cod_Usuario);
 
-
-
-
+create view busca as
+select I.Nome_BookImg, L.nome_livro, L.preço, E.cidade, L.cod_livro, G.nome_genero from livro L
+inner join dados D
+on D.cod_usuario = L.cod_usuario
+inner join  endereco E
+on E.cod_dados = D.cod_dados
+inner join bookimg I
+on I.cod_livro = L.cod_livro
+inner join genero G
+on G.cod_livro = L.cod_livro;
 
 
 

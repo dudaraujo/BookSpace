@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["usuario"])){
+  header("location:login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,19 +25,56 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container-fluid">
+      <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+          <a href="home.php"
+            ><img
+              src="./Books_imgs/even_little_book.png"
+              class="img-fluid"
+              alt="little_book"
+          /></a>
+          <strong><h2 class="pt-1">BookSpace</h2></strong>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsite">
+            <ul class="navbar-nav mr-auto">
+               
+                <li class="nav-item">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./livro_cadastro.php">Cadastrar</a>
+                                <a class="dropdown-item" href="./dados_usuario.php">Minha conta</a>
+                                <a class="dropdown-item" href="#">Categorias</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+           
+            <form class="form-inline" method="get" action="busca_livros.php">
+                <input class="form-control ml-2 " type="search" placeholder="search..." name="busca">
+                <button class="btn btn-warning" type="subtmit">search</button>
+                <?php
+                  if (!isset($_SESSION["usuario"])){
+                    echo "<a href='login.php' class='btn btn-primary ml-3' id='login'>login</a>";
+                  }else{
+                  echo "<a href='sair.php' class='btn btn-primary ml-3' id='login'>sair</a>";
+                  }
+                  ?>
+            </form>
+        </div>
+    </div>
+  </nav>
   <div class="container-fluid">
-    <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="navbar-brand mb-0" id="title">
-        <a href="home.html"><img src="./Books_imgs/even_little_book.png" alt="little_book"></a>
-        <strong>
-          <h2>BookSpace</h2>
-        </strong>
-      </div>
-    </nav>
-
-
     <div class="col-12 text center my-5">
-      <h1 class="text-center">Cadastre-se</h1>
+      <h1 class="text-center"> Seus Dados</h1>
     </div>
 
     <div class="row justify-content-center mb-5">
@@ -84,16 +130,7 @@
 
           <div class="form row">
             <div class="form-group col-sm-6">
-              <div class="input-group md-3">
-                <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" >
-                <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">
-                    <img  id="olho"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABDUlEQVQ4jd2SvW3DMBBGbwQVKlyo4BGC4FKFS4+TATKCNxAggkeoSpHSRQbwAB7AA7hQoUKFLH6E2qQQHfgHdpo0yQHX8T3exyPR/ytlQ8kOhgV7FvSx9+xglA3lM3DBgh0LPn/onbJhcQ0bv2SHlgVgQa/suFHVkCg7bm5gzB2OyvjlDFdDcoa19etZMN8Qp7oUDPEM2KFV1ZAQO2zPMBERO7Ra4JQNpRa4K4FDS0R0IdneCbQLb4/zh/c7QdH4NL40tPXrovFpjHQr6PJ6yr5hQV80PiUiIm1OKxZ0LICS8TWvpyyOf2DBQQtcXk8Zi3+JcKfNafVsjZ0WfGgJlZZQxZjdwzX+ykf6u/UF0Fwo5Apfcq8AAAAASUVORK5CYII="
-                />
-                  </span>
-                </div>
-              </div>
+              <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
             </div>
             <div class="form-group col-sm-6">
               <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha">
@@ -103,10 +140,10 @@
 
 
 
-
-          <div class="d-flex  justify-content-center">
-            <div class="w-25">
-              <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
+          <div class="d-flex  justify-content-left">
+            <div class="w-auto">
+              <button type="submit" class="btn btn-warning">salvar</button>
+              <button type="submit" class="btn btn-danger">cancelar</button>
             </div>
           </div>
 
@@ -114,10 +151,8 @@
       </div>
 
     </div>
-
-
-    <div class="row" id="footer"></div>
   </div>
+ 
 
 
   <script src="node_modules/jquery/dist/jquery.js"></script>

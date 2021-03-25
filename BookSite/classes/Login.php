@@ -1,22 +1,10 @@
 <?php
 
-class Login{
-    private $banco;
+session_start();
 
-//fazendo conexão com o banco
-function __construct($db, $host, $usuario, $senha){
-try{
-    $this->banco = new PDO("mysql:dbname=".$db.";host=".$host,$usuario,$senha);
-}
-catch(PDOException $e){
-    echo "erro com o banco:".$e->getMessage();
-    exit();
-}
-catch(Exception $e){
-    echo "erro generico:".$e->getMessage();
-    exit();
-}
-}
+require_once "Banco.php";
+
+class Login extends Banco{
 
 //verificando email e senha e fazendo login
 function verificaLogin($email, $senha){
@@ -24,23 +12,26 @@ function verificaLogin($email, $senha){
     $res = $cmd->fetch(PDO::FETCH_ASSOC);
 
     if (empty($res)){
-        header("location:../login.html");
+        header("location:../login.php");
     }
     else{
-        header("location:../home.html");
+        $cmd = $this->banco->query("select * from usuario where email= '$email' and senha = '$senha'");
+        $usu = $cmd->fetchColumn();
+        $_SESSION["usuario"] = $usu;
+        header("location:../home.php");
     }
 }
 
 //criando novo usuario
 function novoUsuario($no, $cpf, $rg, $tel, $email, $cid, $cep, $bairro, $num, $comp, $s){
     if ($this->veriEmail($email)){
-        header("location:../Cadastro.html");
+        header("location:../Cadastro.php");
     }
     else{
         $this->banco->query("insert into usuario(email, senha) values('$email', '$s')");
         $this->dadosUsuario($no, $cpf, $rg, $tel, $email);
         $this->endereço($cid, $cep, $bairro, $num, $comp, $email);
-        header("location:../login.html");
+        header("location:../login.php");
     }
 }
 

@@ -23,19 +23,19 @@
     <div class="container">
       <div class="d-flex align-items-center justify-content-left lt_book animate-up">
         <div class="book">
-          <a href="home.html"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
+          <a href="home.php"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
         </div>
         <div class="written">
-          <h1 class="text-light">Bookspace</h1>
+          <h1 class="vish text-light">BookSpace</h1>
         </div>
       </div>
 
       <div class="col-12 text center my-5 animate-up" id="login_title">
-        <h1 class="text-center text-light">Fazer login usando sua conta</h1>
+        <h2 class="text-center text-light">Fazer login usando sua conta</h2>
       </div>
 
       <div class="formulario animate-up">
-        <form method="POST">
+        <form method="POST" action="banco/veriLogin.php">
           <div class="form-group">
             <input
               type="email"
@@ -43,6 +43,7 @@
               id="email"
               aria-describedby="emailHelp"
               placeholder="e-mail/usuário"
+              name="email"
             />
           </div>
 
@@ -52,6 +53,7 @@
               class="form-control form-control-lg"
               id="password"
               placeholder="senha"
+              name="senha"
             />
           </div>
 
@@ -61,7 +63,7 @@
 
           <div class="under_enter animate-up">
             <div class="text-left">
-              <a href="Cadastro.html" class="text-light"> Criar conta </a>
+              <a href="Cadastro.php" class="text-light"> Criar conta </a>
             </div>
             <div class="text-right">
               <a href="#" class="text-light"> Esqueceu a senha ? </a>

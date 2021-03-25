@@ -1,6 +1,6 @@
 #footer{
-    height: 90px;
-    background-color: #007bff;
+    height: 90 px;
+
 }
 #show_img{
     max-width:300px;
@@ -11,4 +11,11 @@
 
 #olho{
     cursor: pointer;
+}
+
+.carai{
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
 }

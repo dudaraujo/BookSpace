@@ -6,8 +6,7 @@
     justify-content: center;
 }
 #footer{
-    height: 90px;
-    background-color: #007bff;
+    height: 200px;
 }
 #show_img{
     max-width:300px;
@@ -25,3 +24,11 @@ input[type='file'] {
     height: auto;
     cursor: pointer;
 }  
+
+#inputGender{
+    margin-top: 10px;
+}
+
+#generos{
+    margin-top: -10px;
+}
