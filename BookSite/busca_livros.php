@@ -5,10 +5,15 @@ session_start();
 require_once "classes/Pesquisa.php";
 
 $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+// a var cou é um contador de anuncios
 $cou = 0;
+
+// estou fazendo uma busca sem filtro
 if (isset($_GET["busca"]) and !isset($_POST["check"])){
   $busca = $pesquisa->pesquisar($_GET["busca"]);
-}elseif(isset($_GET["busca"]) and isset($_POST["check"])){
+}
+//busca com filtro de genero
+elseif(isset($_GET["busca"]) and isset($_POST["check"])){
   $ch = $_POST["check"];
   $busca = $pesquisa->filtrar($_GET["busca"], $ch);
   
@@ -195,9 +200,6 @@ else{
                 $cou += 1;
                 }       
                 }
-                }
-                else{
-                  echo "<h1>sem resultados</h1>";
                 }
                 if ($cou == 0){
                   echo "<h1>sem resultados</h1>";

@@ -146,8 +146,9 @@ on I.cod_livro = L.cod_livro
 inner join genero G
 on G.cod_livro = L.cod_livro;
 
-
-
-
-
-
+create view pessoa as
+select U.cod_usuario, U.email, U.senha, D.nome_usuario, D.cpf, D.rg, D.telefone, E.cep, E.logradouro, E.numero, E.cidade, E.complemento from usuario U
+inner join dados D
+on D.cod_usuario = U.cod_usuario
+inner join endereco E
+on E.cod_dados = D.cod_dados;

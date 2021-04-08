@@ -1,8 +1,13 @@
 <?php
-session_start();
+require_once "classes/UsuUp.php";
 
 if (!isset($_SESSION["usuario"])){
   header("location:login.php");
+}else{
+  $upd = new Update("bookspace", "localhost", "root", "");
+
+  //estou pegando os dados do usuario logado
+  $dados = $upd->dados($_SESSION["usuario"]);
 }
 
 ?>
@@ -79,72 +84,74 @@ if (!isset($_SESSION["usuario"])){
 
     <div class="row justify-content-center mb-5">
       <div class="col-sm-12 col-md-10 col-lg-8">
-        <form method="POST">
+        <form method="POST" action="banco/updateUsu.php">
           <div class="form row">
             <div class="form-group col-sm-12">
-              <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+              <input type="text" class="form-control" id="inputNome" placeholder="Nome" value='<?php echo $dados[0]["nome_usuario"] ?>' name="nome">
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="CPF">
+              <input type="text" class="form-control" id="inputEnd" placeholder="CPF" value='<?php echo $dados[0]["cpf"] ?>' name="cpf">
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputCEP" placeholder="RG">
+              <input type="text" class="form-control" id="inputCEP" placeholder="RG" value='<?php echo $dados[0]["rg"] ?>' name="rg">
             </div>
           </div>
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="Telefone">
+              <input type="text" class="form-control" id="inputTel" placeholder="Telefone" value='<?php echo $dados[0]["telefone"] ?>' name="telefone">
             </div>
 
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="E-mail">
+              <input type="text" class="form-control" id="inputTel" placeholder="E-mail" value='<?php echo $dados[0]["email"] ?>' name="email">
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-sm-12">
-              <input type="text" class="form-control" id="inputNome" placeholder="Cidade">
+              <input type="text" class="form-control" id="inputNome" placeholder="Cidade" value='<?php echo $dados[0]["cidade"] ?>' name="cidade">
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="CEP">
+              <input type="text" class="form-control" id="inputNome" placeholder="CEP" value='<?php echo $dados[0]["cep"] ?>' name="cep">
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="Bairro">
-            </div>
-          </div>
-
-          <div class="form row">
-            <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="Número">
-            </div>
-            <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="Complemento">
+              <input type="text" class="form-control" id="inputEnd" placeholder="Bairro" value='<?php echo $dados[0]["logradouro"] ?>' name="logradouro">
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
+              <input type="text" class="form-control" id="inputNome" placeholder="Número" value='<?php echo $dados[0]["numero"] ?>' name="numero">
             </div>
             <div class="form-group col-sm-6">
-              <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha">
+              <input type="text" class="form-control" id="inputEnd" placeholder="Complemento" value='<?php echo $dados[0]["complemento"] ?>' name="complemento">
+            </div>
+          </div>
+
+          <div class="form row">
+            <div class="form-group col-sm-6">
+              <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" value='<?php echo $dados[0]["senha"] ?>' name="senha">
+            </div>
+            <div class="form-group col-sm-6">
+              <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha" value='<?php echo $dados[0]["senha"] ?>' name="confSenha">
             </div>
             <br> <br> <br> <br>
           </div>
+          
 
 
 
           <div class="d-flex  justify-content-left">
             <div class="w-auto">
               <button type="submit" class="btn btn-warning">salvar</button>
-              <button type="submit" class="btn btn-danger">cancelar</button>
+              <button type="button" onclick="window.location.href = 'home.php'" class="btn btn-danger">cancelar</button>
             </div>
+            <br><br>
           </div>
 
         </form>
@@ -152,7 +159,9 @@ if (!isset($_SESSION["usuario"])){
 
     </div>
   </div>
- 
+
+<br><br>
+  <footer class="row bg-primary" id="footer"></footer>
 
 
   <script src="node_modules/jquery/dist/jquery.js"></script>

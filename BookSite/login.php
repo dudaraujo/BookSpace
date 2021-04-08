@@ -18,7 +18,9 @@
     />
     <link rel="stylesheet" href="./CSS/login_page.CSS" />
     <link rel="stylesheet" href="./CSS/animations.CSS" />
+    <script src="scripts/vali.js" defer></script>
   </head>
+
   <body>
     <div class="container">
       <div class="d-flex align-items-center justify-content-left lt_book animate-up">
@@ -35,8 +37,8 @@
       </div>
 
       <div class="formulario animate-up">
-        <form method="POST" action="banco/veriLogin.php">
-          <div class="form-group">
+        <form method="POST" action="banco/veriLogin.php" id="dados-form">
+          <div>
             <input
               type="email"
               class="form-control form-control-lg"
@@ -44,9 +46,11 @@
               aria-describedby="emailHelp"
               placeholder="e-mail/usuário"
               name="email"
+              required
             />
+            <div id="msg"></div>
           </div>
-
+  <br>
           <div class="form-group">
             <input
               type="password"
@@ -54,7 +58,9 @@
               id="password"
               placeholder="senha"
               name="senha"
+              required
             />
+            <div id="msg"></div>
           </div>
 
           <button type="submit" class="btn btn-info btn-lg btn-block">

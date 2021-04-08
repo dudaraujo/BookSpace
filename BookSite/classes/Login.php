@@ -36,7 +36,7 @@ function novoUsuario($no, $cpf, $rg, $tel, $email, $cid, $cep, $bairro, $num, $c
 }
 
 //verifica se o email existe
-private function veriEmail($e){
+function veriEmail($e){
     $cmd = $this->banco->query("select * from usuario where email= '$e'");
     $res = $cmd->fetch(PDO::FETCH_ASSOC);
 

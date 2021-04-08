@@ -17,6 +17,8 @@ session_start();
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="./CSS/nav.css">
   <link rel="stylesheet" href="CSS/cadastro.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="scripts/vali.js" defer></script>
 </head>
 
 <body>
@@ -74,59 +76,69 @@ session_start();
 
     <div class="row justify-content-center mb-5">
       <div class="col-sm-12 col-md-10 col-lg-8">
-        <form method="POST" action="banco/novoUsuario.php">
+        <form method="POST" action="#" id="dados-form">
           <div class="form row">
             <div class="form-group col-md-12">
-              <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
+              <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome" >
+              <div id="msg"></div>
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="CPF" name="cpf">
+              <input type="text" class="form-control" id="inputEnd" placeholder="CPF" name="cpf" maxlength="11" > 
+              <div id="msg"></div>
             </div>
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputCEP" placeholder="RG" name="rg">
+              <input type="text" class="form-control" id="inputCEP" placeholder="RG" name="rg" >
+              <div id="msg"></div>
             </div>
           </div>
           <div class="form row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="Telefone" name="telefone">
+              <input type="number" class="form-control" id="inputTel" placeholder="Telefone" name="telefone" >
+              <div id="msg"></div>
             </div>
 
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputTel" placeholder="E-mail" name="email">
+              <input type="email" class="form-control" id="inputTel" placeholder="E-mail" name="email" maxlength="30" >
+              <div id="msg"></div>
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-md-12">
-              <input type="text" class="form-control" id="inputNome" placeholder="Cidade" name="cidade">
+              <input type="text" class="form-control" id="inputNome" placeholder="Cidade" name="cidade" >
+              <div id="msg"></div>
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="CEP" name="cep">
+              <input type="text" class="form-control" id="inputNome" placeholder="CEP" name="cep" >
+              <div id="msg"></div>
             </div>
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputEnd" placeholder="Bairro" name="bairro">
+              <input type="text" class="form-control" id="inputEnd" placeholder="Bairro" name="bairro" >
+              <div id="msg"></div>
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="Número" name="numero">
+              <input type="number" class="form-control" id="inputNome" placeholder="Número" name="numero" >
+              <div id="msg"></div>
             </div>
             <div class="form-group col-md-6">
               <input type="text" class="form-control" id="inputEnd" placeholder="Complemento" name="complemento">
+              <div id="msg"></div>
             </div>
           </div>
 
           <div class="form row">
             <div class="form-group col-md-6">
               <div class="input-group md-3">
-                <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" name="senha">
+                <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" name="senha" >
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2">
                     <img  id="olho"
@@ -134,15 +146,15 @@ session_start();
                 />
                   </span>
                 </div>
+                <div id="msg"></div>
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha" name="confSenha"> 
+            <div class="form-group col-md-6"> 
+              <input type="password" class="form-control" id="Senha" placeholder="Confirmar Senha" name="confSenha" maxlength="15" >
+              <div id="msg"></div>
             </div>
             <br> <br> <br> <br>
           </div>
-
-
 
 
           <div class="d-flex  justify-content-center">
@@ -150,8 +162,8 @@ session_start();
               <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
             </div>
           </div>
-
         </form>
+        <br><br>
       </div>
 
     </div>
@@ -159,7 +171,7 @@ session_start();
 
     
   </div>
-
+  <footer class="row bg-primary" id="footer"></footer>
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>

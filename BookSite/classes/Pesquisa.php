@@ -2,6 +2,7 @@
 require_once "Banco.php";
 
 class Pesquisa extends Banco{
+//busca sem filtro
 function pesquisar($b){
         $t = "%".$b."%";
         $res = array();
@@ -13,6 +14,7 @@ function pesquisar($b){
         }
         return ($res);
     }
+//filtro por genero
 function filtrar($b, $f){
         $t = "%".$b."%";
         $res = array();

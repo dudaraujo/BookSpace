@@ -50,3 +50,19 @@ body{
 .vish{
     font-size:60px ;
 }
+
+span.error {
+    display: flex !important;
+    
+    padding: 0 !important;
+
+    background-color: rgba(255, 0, 0, 0.404) !important;
+
+    margin-top: 2% !important;
+}
+
+span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+    color:white;
+}
