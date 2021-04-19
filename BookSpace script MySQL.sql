@@ -135,12 +135,93 @@ ADD CONSTRAINT fk_Usuario_Livro
 FOREIGN KEY (Cod_Usuario)
 REFERENCES Usuario(Cod_Usuario);
 
+ALTER TABLE dados
+DROP COLUMN RG;
 
+ALTER TABLE dados
+DROP COLUMN CPF;
 
+ALTER TABLE dados
+DROP COLUMN Telefone;
 
+ALTER TABLE dados
+DROP COLUMN Data_Nasc;
 
+ALTER TABLE endereco
+ADD Estado varchar(10) not null;
 
+CREATE TABLE Comentarios(
+Cod_Comentario int not null primary key auto_increment,
+Comentario varchar(500) not null,
+Cod_Livro int not null,
+Cod_Usuario int not null
+)engine=innodb;
 
+ALTER TABLE Comentarios
+ADD CONSTRAINT fk_Livro_Comentarios
+FOREIGN KEY (Cod_Livro)
+REFERENCES Livro (Cod_Livro);
 
+ALTER TABlE Comentarios
+ADD CONSTRAINT fk_Usuario_Comentarios
+FOREIGN KEY (Cod_Usuario)
+REFERENCES Usuario (Cod_Usuario);
 
+ALTER TABLE Genero
+DROP CONSTRAINT fk_Livro_Genero;
+
+CREATE TABLE Livro_Genero(
+Cod_Livro_Genero int not null primary key auto_increment,
+Cod_Genero int not null,
+Cod_Livro int not null
+)engine=innodb;
+
+ALTER TABLE Livro_Genero
+ADD CONSTRAINT fk_Genero_Livro_Genero
+FOREIGN KEY (Cod_Genero)
+REFERENCES Genero(Cod_Genero);
+
+ALTER TABLE Livro_Genero
+ADD CONSTRAINT fk_Livro_Livro_Genero
+FOREIGN KEY (Cod_Livro)
+REFERENCES Livro(Cod_Livro);
+
+ALTER TABLE Genero
+DROP COLUMN Cod_Livro;
+
+ALTER TABLE dados
+ADD Telefone int; 
+
+CREATE TABLE Avaliacao (
+Cod_Avaliacao int not null primary key auto_increment,
+nota int,
+Cod_Livro int not null,
+Cod_Usuario int not null
+)engine=innodb;
+
+ALTER TABLE Avaliacao 
+ADD CONSTRAINT fk_Livro_Avaliacao
+FOREIGN KEY (Cod_Livro)
+REFERENCES Livro (Cod_Livro);
+
+ALTER TABLE Avaliacao 
+ADD CONSTRAINT fk_Usuario_Avaliacao
+FOREIGN KEY (Cod_Usuario)
+REFERENCES Usuario (Cod_Usuario);
+
+CREATE TABLE Carrinho (
+Cod_Carrinho int not null primary key auto_increment,
+Cod_Livro int not null,
+Cod_Usuario int not null
+)engine=innodb;
+
+ALTER TABLE Carrinho 
+ADD CONSTRAINT fk_Livro_Carrinho
+FOREIGN KEY (Cod_Livro)
+REFERENCES Livro (Cod_Livro);
+
+ALTER TABLE Carrinho 
+ADD CONSTRAINT fk_Usuario_Carrinho
+FOREIGN KEY (Cod_Usuario)
+REFERENCES Usuario (Cod_Usuario);
 
