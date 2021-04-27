@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css" />
+
+    <link rel="stylesheet" href="style/css/style.css" />
+
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/all.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container-fluid">
+          <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+              <a href="home.html"
+                ><img
+                  src="./Books_imgs/even_little_book.png"
+                  class="img-fluid"
+                  alt="little_book"
+              /></a>
+              <strong><h2 class="pt-1">BookSpace</h2></strong>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsite">
+                <ul class="navbar-nav mr-auto">
+                   
+                    <li class="nav-item">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                                    Menu
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./livro_cadastro.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="./dados_usuario.html">Minha conta</a>
+                                    <a class="dropdown-item" href="./busca_livros.html">Categorias</a>
+                                    <a class="dropdown-item" href="./Meus_anuncios.html">Meus anúncios</a>
+                                    <a class="dropdown-item" href="./sobre.html">Sobre nós</a>
+                                    <a class="dropdown-item" href="./politica_privacidade.html">Política de privacidade</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+               
+                <form class="form-inline">
+                    <input class="form-control ml-2 " type="search" placeholder="search...">
+                    <button class="btn btn-warning" type="subtmit">search</button>
+                    <a href="login.html" class="btn btn-primary ml-3" id="login">login</a>
+                    <a href="carrinho.html" class="btn btn-info ml-3">
+                        <i class="fas fa-shopping-cart"></i>                        
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="col-md-10 ml-5 mt-4 pl-5">
+    <h1 class="display-3 mb-4">Sobre nós</h1>
+        <p class="lead">
+            Mais uma noite como todas as anteriores. Pego minha caneca de café cheia, 
+            acendo meu ultimo cigarro e corro pra velha janela do quarto. Observo a noite fria e chuvosa, 
+            até parece confortável por um momento, se não fossem as dezenas de preocupações que me desmotivam 
+            a cada dia.
+            Penso em você, mesmo sabendo o quão longe está de mim, sinto aquele amor que continua a me desgraçar 
+            intensamente a cada dia, e penso quando enfim poderei te ter comigo. Sei lá, o café chega ao fim e 
+            trago a ultima ponta, nada muda. É como se eu fosse passar por isso mais uns longos anos a frente.
+            Cada vez mais tenho a sensação de incertezas e inseguranças e tento me manter firme apesar disso. 
+            Algumas coisas parecem dar certo e maioria não, tipo você.
+        </p>
+
+    </div>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
