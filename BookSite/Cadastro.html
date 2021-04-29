@@ -16,51 +16,53 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-    <div class="container-fluid">
-      <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
-          <a href="home.html"
-            ><img
-              src="./Books_imgs/even_little_book.png"
-              class="img-fluid"
-              alt="little_book"
-          /></a>
-          <strong><h2 class="pt-1">BookSpace</h2></strong>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarsite">
-            <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container-fluid">
+          <div class="navbar-brand mb-0 d-flex justify-content-center align-items-center" >
+              <a href="home.html"
+                ><img
+                  src="./Books_imgs/even_little_book.png"
+                  class="img-fluid"
+                  alt="little_book"
+              /></a>
+              <strong><h2 class="pt-1">BookSpace</h2></strong>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsite">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsite">
+                <ul class="navbar-nav mr-auto">
+                   
+                    <li class="nav-item">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
+                                    Menu
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./livro_cadastro.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="./dados_usuario.html">Minha conta</a>
+                                    <a class="dropdown-item" href="./busca_livros.html">Categorias</a>
+                                    <a class="dropdown-item" href="./Meus_anuncios.html">Meus anúncios</a>
+                                    <a class="dropdown-item" href="./sobre.html">Sobre nós</a>
+                                    <a class="dropdown-item" href="./politica_privacidade.html">Política de privacidade</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                
-                <li class="nav-item">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navdrop">
-                                Menu
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="./livro_cadastro.html">Cadastrar</a>
-                                <a class="dropdown-item" href="./dados_usuario.html">Minha conta</a>
-                                <a class="dropdown-item" href="./busca_livros.html">Categorias</a>
-                                <a class="dropdown-item" href="./Meus_anuncios.html">Meus anúncios</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-           
-            <form class="form-inline">
-                <input class="form-control ml-2 " type="search" placeholder="search...">
-                <button class="btn btn-warning" type="subtmit">search</button>
-                <a href="login.html" class="btn btn-primary ml-3" id="login">login</a>
-                <a href="carrinho.html" class="btn btn-info ml-3">
-                    <i class="fas fa-shopping-cart"></i>                        
-                </a>
-            </form>
+                <form class="form-inline">
+                    <input class="form-control ml-2 " type="search" placeholder="search...">
+                    <button class="btn btn-warning" type="subtmit">search</button>
+                    <a href="login.html" class="btn btn-primary ml-3" id="login">login</a>
+                    <a href="carrinho.html" class="btn btn-info ml-3">
+                        <i class="fas fa-shopping-cart"></i>                        
+                    </a>
+                </form>
+            </div>
         </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container-fluid">
     <div class="col-12 text center my-5">
       <h1 class="text-center">Cadastre-se</h1>
@@ -136,20 +138,15 @@
             <br> <br> <br> <br>
           </div>
 
-
-
-
           <div class="d-flex  justify-content-center">
             <div class="w-25">
               <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
             </div>
           </div>
-
         </form>
       </div>
-
     </div>
-    <footer class="row bg-primary" id="footer"></footer>
+    <footer class="row bg-info" id="footer"></footer>
   </div>
 
 
