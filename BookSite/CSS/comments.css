@@ -38,3 +38,12 @@ textarea
 .card{
     border-style: unset;
 }
+
+.foto_perfil{
+    width: 75px;
+    height: 75px;
+}
+
+.perfil_width{
+    width: 120px;
+}
