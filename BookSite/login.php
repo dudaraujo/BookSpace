@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,12 +21,14 @@
     />
     <link rel="stylesheet" href="./CSS/login_page.CSS" />
     <link rel="stylesheet" href="./CSS/animations.CSS" />
+    
   </head>
+
   <body>
     <div class="container">
       <div class="d-flex align-items-center justify-content-left lt_book animate-up">
         <div class="book">
-          <a href="home.html"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
+          <a href="home.php"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
         </div>
         <div class="written">
           <h1 class="vish text-light">BookSpace</h1>
@@ -35,24 +40,38 @@
       </div>
 
       <div class="formulario animate-up">
-        <form method="POST">
-          <div class="form-group">
+
+      <div id="msg" <?php 
+        if(isset($_SESSION['erro'])){
+          echo "class='alert alert-danger'";
+          }?>>
+        <?php 
+        if(isset($_SESSION['erro'])){
+          echo $_SESSION['erro'];
+          unset($_SESSION["erro"]);
+          }?>
+      </div>
+      
+        <form method="POST" action="banco/veriLogin.php" id="dados-form" novalidate>
+          <div>
             <input
               type="email"
               class="form-control form-control-lg"
               id="email"
               aria-describedby="emailHelp"
               placeholder="e-mail/usuário"
+              name="email"
             />
           </div>
-
+  <br>
           <div class="form-group">
             <input
               type="password"
               class="form-control form-control-lg"
               id="password"
               placeholder="senha"
-            />
+              name="senha"
+            />          
           </div>
 
           <button type="submit" class="btn btn-info btn-lg btn-block">
@@ -61,7 +80,7 @@
 
           <div class="under_enter animate-up">
             <div class="text-left">
-              <a href="Cadastro.html" class="text-light"> Criar conta </a>
+              <a href="Cadastro.php" class="text-light"> Criar conta </a>
             </div>
             <div class="text-right">
               <a href="#" class="text-light"> Esqueceu a senha ? </a>
