@@ -24,11 +24,7 @@ REFERENCES Usuario (Cod_Usuario);
 
 CREATE TABLE Endereco (
 Cod_Endereco int not null primary key auto_increment,
-CEP varchar(20) not null,
-Logradouro varchar(45) not null,
-Numero int not null,
 Cidade varchar(20) not null,
-Complemento varchar(40),
 Cod_Dados int not null
 )engine=innodb;
 
@@ -41,8 +37,6 @@ CREATE TABLE Livro (
 Cod_Livro int not null primary key auto_increment,
 Nome_Livro varchar(50) not null,
 Ano date,
-Peso decimal,
-Altura decimal,
 Quant_Pag int not null,
 Edicao varchar(10) not null,
 Descricao varchar(500) not null,
@@ -225,3 +219,93 @@ ADD CONSTRAINT fk_Usuario_Carrinho
 FOREIGN KEY (Cod_Usuario)
 REFERENCES Usuario (Cod_Usuario);
 
+create view busca as
+select I.Nome_BookImg, L.nome_livro, L.preço, E.cidade, E.estado, L.cod_livro from livro L
+inner join dados D
+on D.cod_usuario = L.cod_usuario
+inner join  endereco E
+on E.cod_dados = D.cod_dados
+inner join bookimg I
+on I.cod_livro = L.cod_livro;
+
+create view pessoa as
+select U.cod_usuario, U.email, U.senha, D.nome_usuario, D.telefone, E.cidade, E.estado from usuario U
+inner join dados D
+on D.cod_usuario = U.cod_usuario
+inner join endereco E
+on E.cod_dados = D.cod_dados;
+
+insert into genero(nome_genero) values("ação");
+insert into genero(nome_genero) values("adulto");
+insert into genero(nome_genero) values("aventura");
+insert into genero(nome_genero) values("comedia");
+insert into genero(nome_genero) values("drama");
+insert into genero(nome_genero) values("espacial");
+insert into genero(nome_genero) values("esportes");
+insert into genero(nome_genero) values("gastronomia");
+insert into genero(nome_genero) values("historico");
+insert into genero(nome_genero) values("terror");
+insert into genero(nome_genero) values("hq");
+insert into genero(nome_genero) values("mangas");
+insert into genero(nome_genero) values("infantil");
+insert into genero(nome_genero) values("jogos");
+insert into genero(nome_genero) values("sci-fi");
+insert into genero(nome_genero) values("misterio");
+insert into genero(nome_genero) values("musica");
+insert into genero(nome_genero) values("romance");
+insert into genero(nome_genero) values("policial");
+insert into genero(nome_genero) values("sobrenatural");
+insert into genero(nome_genero) values("suspense");
+insert into genero(nome_genero) values("vida escolar");
+insert into genero(nome_genero) values("Administração");
+insert into genero(nome_genero) values("Negócios");
+insert into genero(nome_genero) values("Economia");
+insert into genero(nome_genero) values("autoajuda");
+insert into genero(nome_genero) values("ciências");
+insert into genero(nome_genero) values("computação");
+insert into genero(nome_genero) values("infantojuvenil");
+insert into genero(nome_genero) values("ficção");
+insert into genero(nome_genero) values("religioso");
+insert into genero(nome_genero) values("turismo");
+insert into genero(nome_genero) values("Idiomas");
+
+create table conversa(
+	cod_conversa int not null auto_increment primary key,
+    usuario_1 int not null,
+    usuario_2 int not null,
+    hora date not null
+)engine=innodb;
+
+create table msg(
+	cod_msg int not null auto_increment primary key,
+	cod_conversa int not null,
+    msg_to int not null,
+    msg_from int not null,
+    msg varchar(2500) not null,
+	hora date not null
+)engine=innodb;
+
+ALTER TABLE conversa 
+ADD CONSTRAINT fk_usuario_Conversa
+FOREIGN KEY (usuario_1)
+REFERENCES Usuario (Cod_Usuario);
+
+ALTER TABLE conversa 
+ADD CONSTRAINT fk_usuario2_Conversa
+FOREIGN KEY (usuario_2)
+REFERENCES Usuario (Cod_Usuario);
+
+ALTER TABLE msg 
+ADD CONSTRAINT fk_msg_Conversa
+FOREIGN KEY (cod_conversa)
+REFERENCES conversa (cod_conversa);
+
+ALTER TABLE msg 
+ADD CONSTRAINT fk_from_usuario
+FOREIGN KEY (msg_from)
+REFERENCES Usuario (Cod_Usuario);
+
+ALTER TABLE msg
+ADD CONSTRAINT fk_to_usuario
+FOREIGN KEY (msg_to)
+REFERENCES Usuario (Cod_Usuario);
