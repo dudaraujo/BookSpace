@@ -130,7 +130,7 @@ session_start();
 
           <div class="d-flex  justify-content-center">
             <div class="w-25">
-              <button type="submit" class="btn btn-primary btn-center btn-block ">cadastrar</button>
+              <button type="submit" class="btn btn-primary btn-center btn-block ">Cadastrar</button>
             </div>
           </div>
         </form>

@@ -22,7 +22,7 @@
                                   Menu
                               </a>
                               <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="./livro_cadastro.php">Cadastrar</a>
+                                  <a class="dropdown-item" href="./livro_cadastro.php">Anunciar</a>
                                   <a class="dropdown-item" href="./dados_usuario.php">Minha conta</a>
                                   <a class="dropdown-item" href="categorias.php">Categorias</a>
                                   <a class="dropdown-item" href="./Meus_anuncios.php">Meus anúncios</a>
@@ -37,13 +37,13 @@
                   <button class="btn btn-warning" type="subtmit">search</button>
                   <?php
                   if (!isset($_SESSION["usuario"])){
-                    echo "<a href='login.php' class='btn btn-primary ml-3' id='login'>login</a>";
+                    echo "<a href='login.php' class='btn btn-primary ml-3' id='login'>Login</a>";
                   }else{
-                  echo "<a href='sair.php' class='btn btn-primary ml-3' id='login'>sair</a>";
+                  echo "<a href='sair.php' class='btn btn-primary ml-3' id='login'>Sair</a>";
                   }
                   ?>
-                  <a href="carrinho.php" class="btn btn-info ml-3">
-                      <i class="fas fa-shopping-cart"></i>                        
+                  <a href="desejos.php" class="btn btn-info ml-3">
+                      <i class="fa fa-heart"></i>                    
                   </a>
               </form>
           </div>

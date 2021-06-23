@@ -121,7 +121,7 @@ function veriAvaliacao($livro, $usuario){
 function validacao($nome, $autor, $editora, $genero, $idioma, $pag, $peso, $altura, $ediçao, $ano, $valor, $fotos, $usuario, $descricao){
     $erro = false;
     $prox = true;
-    $_SESSION["values"] = $genero;
+    $_SESSION["values"] = count($genero);
     $_SESSION['galeria'] = $fotos;
 
     if ($nome == null){
