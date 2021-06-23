@@ -1,6 +1,7 @@
 create database BookSpace;
 USE BookSpace;
 
+
 CREATE TABLE Dados (
 Cod_Dados int not null primary key auto_increment,
 Nome_Usuario varchar(30) not null,
@@ -37,10 +38,14 @@ CREATE TABLE Livro (
 Cod_Livro int not null primary key auto_increment,
 Nome_Livro varchar(50) not null,
 Ano date,
+ISBN varchar(17) not null,
 Quant_Pag int not null,
 Edicao varchar(10) not null,
 Descricao varchar(500) not null,
 Idioma varchar(15) not null,
+Peso decimal,
+Altura decimal,
+Conservacao varchar(250),
 Preço decimal not null,
 Cod_Editora int not null,
 Cod_Genero int not null,
@@ -85,8 +90,8 @@ REFERENCES Autor (Cod_Autor);
 
 CREATE TABLE BookImg (
 Cod_BookImg int not null primary key auto_increment,
-Nome_BookImg varchar(15) not null unique,
-referencia_BookImg varchar(25) not null,
+Nome_BookImg varchar(30) not null unique,
+referencia_BookImg varchar(25),
 Cod_Livro int not null
 )engine=innodb;
 
