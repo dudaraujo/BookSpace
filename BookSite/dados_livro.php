@@ -1,12 +1,22 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["usuario"])){
-  header("location:login.php");
+if (!isset($_POST['livro'])){
+  header("location:home.php");
 }else{
+//generos do banco
   require_once "classes/Pesquisa.php";
   $generos = new Pesquisa("bookspace", "localhost", "root", "");
   $lista = $generos->generos();
+
+//parte do livro
+  require_once('classes/Pesquisa.php');
+  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+
+  $livro = $_POST['livro'];
+  $info = $pesquisa->dadosLivro($livro);
+  $fotos = $pesquisa->fotosLivro($livro);
+  $generos = $pesquisa->generosLivro($livro);
 }
 
 ?>
@@ -17,7 +27,7 @@ if (!isset($_SESSION["usuario"])){
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro de livro</title>
+  <title>Editar anuncio</title>
   <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css" />
 
   <link rel="stylesheet" href="style/css/style.css" />
@@ -33,14 +43,14 @@ if (!isset($_SESSION["usuario"])){
 
 <div class="container-fluid">
     <div class="col-12 text center my-5">
-      <h1 class="text-center"> Cadastre o livro</h1>
+      <h1 class="text-center"> Editar anuncio</h1>
     </div>
     <div class="row justify-content-center mb-5">
       <div class="col-sm-12 col-md-10 col-lg-8">
-        <form method="POST" action="banco/novoLivro.php" enctype="multipart/form-data" id="dados-form">
+        <form method="POST" action="banco/updateLivro.php" enctype="multipart/form-data" id="dados-form">
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome">
+              <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="nome" value='<?php echo $info[0]['Nome_Livro']; ?>'>
               <?php 
               
               if (isset($_SESSION["nome"])){
@@ -53,7 +63,7 @@ if (!isset($_SESSION["usuario"])){
               ?>
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputAuthor" placeholder="Autor" name="autor">
+              <input type="text" class="form-control" id="inputAuthor" placeholder="Autor" name="autor" value='<?php echo $info[0]['nome_autor']; ?>'>
               <?php 
               
               if (isset($_SESSION["autor"])){
@@ -68,7 +78,7 @@ if (!isset($_SESSION["usuario"])){
           </div>
           <div class="form row">
             <div class="form-group col-sm-12">
-              <input type="text" class="form-control" id="inputEditor" placeholder="Editora" name="editora">
+              <input type="text" class="form-control" id="inputEditor" placeholder="Editora" name="editora" value='<?php echo $info[0]['nome_editora']; ?>'>
               <?php 
               
               if (isset($_SESSION["editora"])){
@@ -91,7 +101,11 @@ if (!isset($_SESSION["usuario"])){
 
                     <?php 
                       for ($i = 0; $i < count($lista); $i++){
-                        echo "<option value='".$lista[$i]['Cod_Genero']."'>".$lista[$i]['Nome_Genero']."</option>";
+                        if($lista[$i]['Cod_Genero'] == $generos[0]["cod_genero"]){
+                            echo "<option value='".$lista[$i]['Cod_Genero']."' selected>".$lista[$i]['Nome_Genero']."</option>";
+                        }else{
+                            echo "<option value='".$lista[$i]['Cod_Genero']."'>".$lista[$i]['Nome_Genero']."</option>";
+                        }
                       }
                     ?>
 
@@ -101,6 +115,25 @@ if (!isset($_SESSION["usuario"])){
                     <button class="btn btn-danger" id="remove" type="button">-</button>
                 </div>
                 </div>
+
+                <?php 
+                    for ($gen = 1; $gen < count($generos); $gen++){
+
+                        echo "<select class='form-control mt-3' name='genero[]' aria-label='Genero' aria-describedby='basic-addon2'>
+                        <option>Generos</option>";
+                        
+                        for ($i = 0; $i < count($lista); $i++){
+                            if($lista[$i]['Cod_Genero'] == $generos[$gen]["cod_genero"]){
+                                echo "<option value='".$lista[$i]['Cod_Genero']."' selected>".$lista[$i]['Nome_Genero']."</option>";
+                            }else{
+                                echo "<option value='".$lista[$i]['Cod_Genero']."'>".$lista[$i]['Nome_Genero']."</option>";
+                            }
+                        }
+
+                        echo "</select>";
+                        
+                    }
+                ?>
                 
                 <?php
                 if (isset($_SESSION['values'])){
@@ -130,7 +163,8 @@ if (!isset($_SESSION["usuario"])){
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Descrição do livro' name="descricao"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Descrição do livro' name="descricao"> <?php echo $info[0]['Descricao']; ?>
+            </textarea>
             <?php 
               
               if (isset($_SESSION["descricao"])){
@@ -145,7 +179,7 @@ if (!isset($_SESSION["usuario"])){
 
           <div class="form row">
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputLang" placeholder="Idioma" name="idioma">
+              <input type="text" class="form-control" id="inputLang" placeholder="Idioma" name="idioma" value='<?php echo $info[0]['Idioma']; ?>'>
               <?php 
               
               if (isset($_SESSION["idioma"])){
@@ -158,7 +192,7 @@ if (!isset($_SESSION["usuario"])){
               ?>
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputQuant" placeholder="Quantidade de páginas" name="pag">
+              <input type="text" class="form-control" id="inputQuant" placeholder="Quantidade de páginas" name="pag" value='<?php echo $info[0]['Quant_Pag']; ?>'>
               <?php 
               
               if (isset($_SESSION["pag"])){
@@ -173,13 +207,13 @@ if (!isset($_SESSION["usuario"])){
           </div>
           <div class="form row">
             <div class="form-group col-sm-3">
-              <input type="text" class="form-control" id="inputweight" placeholder="Peso" name="peso">
+              <input type="text" class="form-control" id="inputweight" placeholder="Peso" name="peso" value='<?php echo $info[0]['Peso']; ?>'>
             </div>
             <div class="form-group col-sm-3">
-              <input type="text" class="form-control" id="inputHeight" placeholder="Altura" name="altura">
+              <input type="text" class="form-control" id="inputHeight" placeholder="Altura" name="altura" value='<?php echo $info[0]['Altura']; ?>'>
             </div>
             <div class="form-group col-sm-3">
-              <input type="text" class="form-control" id="inputEdition" placeholder="Edição" name="ediçao">
+              <input type="text" class="form-control" id="inputEdition" placeholder="Edição" name="ediçao" value='<?php echo $info[0]['Edicao']; ?>'>
               <?php 
               
               if (isset($_SESSION["ediçao"])){
@@ -192,7 +226,7 @@ if (!isset($_SESSION["usuario"])){
               ?>
             </div>
             <div class="form-group col-sm-3">
-              <input type="text" class="form-control" id="inputYear" placeholder="Ano" name="ano">
+              <input type="text" class="form-control" id="inputYear" placeholder="Ano" name="ano" value='<?php echo $info[0]['Ano']; ?>'>
               <?php 
               
               if (isset($_SESSION["ano"])){
@@ -211,6 +245,13 @@ if (!isset($_SESSION["usuario"])){
                   id="input_img"></label>
               <input id='selecao-arquivo' type='file' class="upload" name="arquivos[]" multiple>
               <div id="imgs">
+
+                <?php
+                    for($img = 0; $img < count($fotos); $img++){
+                        echo "<img class='img-thumbnail' id='show_img' src='Books_imgs/imgs/".$fotos[$img]['Nome_BookImg']."'></img>";
+                    }
+                ?>
+
               </div>
               <?php 
               
@@ -224,7 +265,7 @@ if (!isset($_SESSION["usuario"])){
               ?>
             </div>
             <div class="form-group col-sm-6">
-              <input type="text" class="form-control" id="inputNome" placeholder="Valor R$" name="valor">
+              <input type="text" class="form-control" id="inputNome" placeholder="Valor R$" name="valor" value='<?php echo $info[0]['Preço']; ?>'>
               <?php 
               
               if (isset($_SESSION["valor"])){
@@ -240,7 +281,7 @@ if (!isset($_SESSION["usuario"])){
           </div>
           <div class="d-flex  justify-content-center">
             <div class="w-25">
-              <button type="submit" class="btn btn-primary btn-center btn-block ">Cadastrar</button>
+              <button type="submit" class="btn btn-primary btn-center btn-block ">Salvar</button>
             </div>
           </div>
       </div>
@@ -252,8 +293,8 @@ if (!isset($_SESSION["usuario"])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="./scripts/Image_show.js"></script>
   <script src="./scripts/clone.js"></script>
+  <script src="./scripts/image_show.js"></script>
 </body>
 
 </html>

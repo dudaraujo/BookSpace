@@ -100,7 +100,7 @@ $avaliacoes = $pesquisa->avaliacoes($livro);
                   </div>
                   <div class="col text-center">
                     <form action="banco/carrinho.php" method="post">                
-                    <button type="submit" class="btn btn-primary">carrinho</button>
+                    <button type="submit" class="btn btn-primary">MInha lista</button>
                     <input type="hidden" value='<?php echo $livro ?>' name="livro">
                     <input type="hidden" value='<?php echo $info[0]["Cod_Usuario"] ?>' name="cod_usuario">
                     </form>

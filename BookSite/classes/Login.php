@@ -36,7 +36,7 @@ function novoUsuario($no, $tel, $email, $cid, $estado, $s){
         $this->banco->query("insert into usuario(email, senha) values('$email', '$s')");
         $this->dadosUsuario($no, $tel, $email);
         $this->endereço($cid, $estado, $email);
-        header("location:../login.php");
+        header("location:../home.php");
     }
 }
 
@@ -52,7 +52,7 @@ function veriEmail($e){
 }
 
 //registrando endereço
-private function endereço($cid,$estado, $e){
+private function endereço($cid, $estado, $e){
     $this->banco->query("insert into endereco(cidade, estado, cod_dados) values
     ('$cid', '$estado', '{$this->qualDados($e)}')");
 }

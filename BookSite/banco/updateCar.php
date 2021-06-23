@@ -8,7 +8,7 @@ $carrinho = new Carrinho("bookspace", "localhost", "root", "");
 
 $carrinho->apagar($car);
 
-header("location:../carrinho.php");
+header("location:../desejos.php");
 }else{
     header("location:../home.php");
 }

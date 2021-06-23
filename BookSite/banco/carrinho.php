@@ -30,7 +30,7 @@ if ($usuario == $logado){
 
     $carrinho->novoItem($livro, $logado);
 
-    header("location:../carrinho.php");
+    header("location:../desejos.php");
 
 
 }

@@ -18,7 +18,7 @@ if (!isset($_SESSION["usuario"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
+    <title>Lista de desejos</title>
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css" />
 
     <link rel="stylesheet" href="style/css/style.css" />
@@ -32,7 +32,7 @@ if (!isset($_SESSION["usuario"])){
 
   <div class="container-fluid">
       <div class="col-md-10 mt-5 ml-5 pl-5">
-        <h3 class="ml-5">Carrinho</h3>
+        <h3 class="ml-5">MInha lista</h3>
         
         <?php
         if (!empty($carrinho)){
@@ -72,19 +72,10 @@ if (!isset($_SESSION["usuario"])){
                   </div>      
               </div>
           </div>";
-          $total += $carrinho[$i]["preço"]; 
-          }
-
-          echo "
-          <h3 class='ml-5 mt-3'>Valor total: R$".$total."</h3>
-          <div class='d-flex  justify-content-center mt-5 ml-5 mb-5'>
-          <div class='w-25'>
-            <button type='submit' class='btn btn-primary btn-center btn-block '>Comprar</button>
-          </div>
-          </div>";          
+          }          
 
         }else{
-          echo "<p class='ml-5 mt-3'>Não há nada no carrinho</p>";
+          echo "<p class='ml-5 mt-3'>Não há nada na lista</p>";
         }
         ?>
        </div>

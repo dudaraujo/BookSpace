@@ -6,6 +6,7 @@ $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
 $busca = $pesquisa->allBooks();
 $recomendacao = $pesquisa->recomendacao();
 $ge = $pesquisa->randGenero();
+
 ?>
 
 
@@ -51,7 +52,7 @@ $ge = $pesquisa->randGenero();
         <div class="container-fluid">
           <div class="pt-4">
             <div class="col-md">
-              <strong><h3>historico</h3></strong>
+              <strong><h3>Histórico</h3></strong>
             </div>
           </div>
 
@@ -72,12 +73,15 @@ $ge = $pesquisa->randGenero();
                 <div class='carousel-item ";if($c1 == 0){echo "active'";}echo"'>";
 
                   for($ab = $c1 * 4; $ab < ($c1+1) * 4; $ab++){
+                    $histId = $hist[$ab] - 1;
                   echo "
                   <div class='col-3 float-left'>
                     <img
                     class='d-block w-50'
                     src='./Books_imgs/imgs/".$busca[$hist[$ab] - 1]["Nome_BookImg"]."'
                     alt='3'
+                    style='cursor:pointer;'
+                    onclick='link(".$histId.")'
                   />
                     <p>".$busca[$hist[$ab] - 1]["nome_livro"]."</p>
                     <p>por: R$ ".$busca[$hist[$ab] - 1]["preço"]."</p>
@@ -166,13 +170,17 @@ $ge = $pesquisa->randGenero();
                   $abc = $recomendacao[$rand_livros[$a]] - 1;
                   echo "
                   <div class='col-3 float-left'>
+                  
                     <img
                     class='d-block w-50'
                     src='./Books_imgs/imgs/".$busca[$abc]["Nome_BookImg"]."'
                     alt='3'
-                  />
+                    style='cursor:pointer;'
+                    onclick='link(".$abc.")'
+                    />
                     <p>".$busca[$abc]["nome_livro"]."</p>
                     <p>por: R$ ".$busca[$abc]["preço"]."</p>
+
                   </div>
                   ";
                   }
@@ -213,8 +221,13 @@ $ge = $pesquisa->randGenero();
       }
     ?>
 
+    <form action='detalhes_livros.php' method='post' id='esco'>
+      <input type='hidden' name='livro' id='input'>
+    </form>
+
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/Popper.js/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="scripts/recomendacao.js"></script>
   </body>
 </html>

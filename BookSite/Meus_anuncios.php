@@ -63,7 +63,10 @@ $anuncios = $pesquisa->anuncios($id);
                           </form>
                             </div>
                           <div class='editar'>
-                                <a href='#' class='btn btn-outline-primary btn-block'>Editar anúncio</a>
+                          <form action='dados_livro.php' method='post'>
+                                <button type='submit' class='btn btn-outline-primary btn-block'>Editar anúncio</button>
+                                <input type='hidden' name='livro' value='".$anuncios[$i]["cod_livro"]."'>
+                          </form>
                           </div>
                       </div>
                 </div>      

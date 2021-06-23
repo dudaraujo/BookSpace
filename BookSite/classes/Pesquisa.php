@@ -62,7 +62,7 @@ function comentarios($id){
         $comando = $this->banco->query("select C.comentario, D.nome_usuario from comentarios C
         inner join dados D
         on D.cod_usuario = C.cod_usuario
-        where C.cod_usuario = '$id'");
+        where C.cod_livro = '$id'");
         $resp = $comando->fetchAll(PDO::FETCH_ASSOC);
         return ($resp);
     }
@@ -114,20 +114,30 @@ function randGenero(){
     $comando = $this->banco->query("select cod_genero, if(count(cod_genero) >= 4, 1, 0) m4 from livro_genero group by cod_genero");
     $recomendacao = $comando->fetchAll(PDO::FETCH_ASSOC);
 
+
+    if (count($recomendacao) > 1){
     $count = array_column($recomendacao, "m4");
     $filtro = array_keys($count, 1);
     $generos = array_column($recomendacao, "cod_genero");
     
+    if (!empty($filtro)){
     $genero_aleatorio = array_rand($filtro, 1);
     
     $escolhido = $filtro[$genero_aleatorio];
 
     return $generos[$escolhido];
+    }
+
+    }else{
+        return false;
+    }
 }
 
 //criando uma lista de recomendacoes aleatoria
 function recomendacao(){
     $randGenero = $this->randGenero();
+
+    if ($randGenero){
     
     $comando = $this->banco->query("select cod_livro from  livro_genero where cod_genero = '$randGenero'");
     $resp = $comando->fetchAll(PDO::FETCH_ASSOC);
@@ -135,6 +145,10 @@ function recomendacao(){
     $livros = array_column($resp, "cod_livro");
 
     return $livros;
+
+    }else{
+        return false;
+    }
 }
 
 //pegando dados do usuario
