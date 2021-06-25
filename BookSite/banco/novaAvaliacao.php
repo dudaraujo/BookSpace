@@ -1,6 +1,6 @@
 <?php
 
-require_once('../classes/Livro.php');
+require_once('./classes/Livro.php');
 
 if (!isset($_SESSION['usuario'])){
     header("location:../login.php");
@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario'])){
         $nota = $_POST['nota'];
 
         if ($usu != $vendedor){
-            $livro = new Livro("bookspace", "localhost", "root", "");
+            $livro = new Livro("bookspace", "localhost", "root", "root");
 
             $livro->novaAvaliacao($nota, $id_livro, $usu );
         }else{

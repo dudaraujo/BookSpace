@@ -17,7 +17,7 @@ body{
 
 .book{
 
-    padding-left: 300px;
+    padding-left: 200px;
 
 }
 
@@ -42,11 +42,11 @@ body{
 
     display:flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
 
     animation-delay: 200ms;    
     
 }
-.vish{
-    font-size:60px ;
+.title{
+    font-size:80px ;
 }

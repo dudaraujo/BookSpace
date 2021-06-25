@@ -26,7 +26,7 @@ if ($usuario == $logado){
 }else{
     require_once "../classes/Carrinho.php";
 
-    $carrinho= new Carrinho("bookspace", "localhost", "root", "");
+    $carrinho= new Carrinho("bookspace", "localhost", "root", "root");
 
     $carrinho->novoItem($livro, $logado);
 

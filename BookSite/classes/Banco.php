@@ -6,7 +6,7 @@ class Banco{
 //fazendo conexão com o banco
 function __construct($db, $host, $usuario, $senha){
 try{
-    $this->banco = new PDO("mysql:dbname=".$db.";host=".$host,$usuario,$senha);
+    $this->banco = new PDO("mysql:dbname=".$db.";host=".$host,$usuario,"root");
 }
 catch(PDOException $e){
     echo "erro com o banco:".$e->getMessage();

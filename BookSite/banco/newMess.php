@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once "../classes/Chat.php";
+require_once "./classes/Chat.php";
 
-$chat = new Chat("bookspace","localhost","root","");
+$chat = new Chat("bookspace","localhost","root","root");
 
 $usu = $_SESSION['usuario'];
 

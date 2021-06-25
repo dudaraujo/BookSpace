@@ -5,7 +5,7 @@ if (!isset($_SESSION["usuario"])){
   header("location:login.php");
 }else{
   require_once "classes/Pesquisa.php";
-  $generos = new Pesquisa("bookspace", "localhost", "root", "");
+  $generos = new Pesquisa("bookspace", "localhost", "root", "root");
   $lista = $generos->generos();
 }
 
@@ -130,7 +130,7 @@ if (!isset($_SESSION["usuario"])){
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Descrição do livro' name="descricao"></textarea>
+            <textarea class="form-control" rows="3" placeholder='Descrição do livro' name="descricao"></textarea>
             <?php 
               
               if (isset($_SESSION["descricao"])){
@@ -143,8 +143,12 @@ if (!isset($_SESSION["usuario"])){
               ?>
           </div>
 
+          <div class="form-group">
+            <textarea class="form-control" rows="2" placeholder='Estado do Livro' name="estado_livro"></textarea>
+          </div>
+
           <div class="form row">
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-4">
               <input type="text" class="form-control" id="inputLang" placeholder="Idioma" name="idioma">
               <?php 
               
@@ -157,7 +161,7 @@ if (!isset($_SESSION["usuario"])){
               
               ?>
             </div>
-            <div class="form-group col-sm-6">
+            <div class="form-group col-sm-4">
               <input type="text" class="form-control" id="inputQuant" placeholder="Quantidade de páginas" name="pag">
               <?php 
               
@@ -169,6 +173,10 @@ if (!isset($_SESSION["usuario"])){
               }
               
               ?>
+            </div>
+
+            <div class="form-group col-sm-4">
+              <input type="text" class="form-control" id="inputisbn" placeholder="ISBN do Livro" name="isbn">
             </div>
           </div>
           <div class="form row">

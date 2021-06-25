@@ -26,6 +26,8 @@
                                   <a class="dropdown-item" href="./dados_usuario.php">Minha conta</a>
                                   <a class="dropdown-item" href="categorias.php">Categorias</a>
                                   <a class="dropdown-item" href="./Meus_anuncios.php">Meus anúncios</a>
+                                  <a class="dropdown-item" href="./politica_privacidade.php">Politica de Privacidade</a>
+                                  <a class="dropdown-item" href="./sobre.php">Sobre nós</a>
                               </div>
                           </li>
                       </ul>
@@ -33,8 +35,8 @@
               </ul>
              
               <form class="form-inline" action="busca_livros.php">
-                  <input class="form-control ml-2 " type="search" placeholder="search..." name='busca'>
-                  <button class="btn btn-warning" type="subtmit">search</button>
+                  <input class="form-control ml-2 " type="text" placeholder="Procurar..." name='busca'>
+                  <button class="btn btn-warning" type="submit">Procurar</button>
                   <?php
                   if (!isset($_SESSION["usuario"])){
                     echo "<a href='login.php' class='btn btn-primary ml-3' id='login'>Login</a>";

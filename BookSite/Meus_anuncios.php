@@ -9,7 +9,7 @@ $id = $_SESSION["usuario"];
 
 require_once "classes/Pesquisa.php";
 
-$pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+$pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
 
 $anuncios = $pesquisa->anuncios($id);
 }

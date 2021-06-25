@@ -5,7 +5,7 @@ if (!isset($_SESSION["usuario"])){
   header("location:login.php");
 }else{
   require_once('classes/Pesquisa.php');
-  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
   $id = $_SESSION['usuario'];
   $carrinho = $pesquisa->carrinho($id);
   $total = 0;
