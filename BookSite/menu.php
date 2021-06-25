@@ -26,7 +26,7 @@
                                   <a class="dropdown-item" href="./dados_usuario.php">Minha conta</a>
                                   <a class="dropdown-item" href="categorias.php">Categorias</a>
                                   <a class="dropdown-item" href="./Meus_anuncios.php">Meus anúncios</a>
-                                  <a class="dropdown-item" href="./politica_privacidade.php">Politica de Privacidade</a>
+                                  <a class="dropdown-item" href="./termos.php">Termos de Uso</a>
                                   <a class="dropdown-item" href="./sobre.php">Sobre nós</a>
                               </div>
                           </li>
