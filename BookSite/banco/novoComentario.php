@@ -1,6 +1,6 @@
 <?php
 
-require_once "../classes/Livro.php";
+require_once "./classes/Livro.php";
 
 if (!isset($_SESSION["usuario"])){
     header("location:../login.php");
@@ -10,7 +10,7 @@ if (!isset($_SESSION["usuario"])){
     $comentario = $_POST['comentario'];
     
     //criando objeto
-    $Livro = new Livro("bookspace", "localhost", "root", "");
+    $Livro = new Livro("bookspace", "localhost", "root", "root");
 
     //comentario
     $Livro->newComent($id, $comentario, $usu);

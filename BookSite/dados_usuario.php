@@ -4,7 +4,7 @@ require_once "classes/UsuUp.php";
 if (!isset($_SESSION["usuario"])){
   header("location:login.php");
 }else{
-  $upd = new Update("bookspace", "localhost", "root", "");
+  $upd = new Update("bookspace", "localhost", "root", "root");
 
   //estou pegando os dados do usuario logado
   $dados = $upd->dados($_SESSION["usuario"]);

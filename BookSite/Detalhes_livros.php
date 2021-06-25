@@ -5,7 +5,7 @@ if (!isset($_POST['livro'])){
   header('location:home.php');
 }else{
   require_once('classes/Pesquisa.php');
-  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
 
   $livro = $_POST['livro'];
   $info = $pesquisa->dadosLivro($livro);
@@ -52,6 +52,8 @@ $avaliacoes = $pesquisa->avaliacoes($livro);
     <link rel="stylesheet" href="./node_modules/font-awesome/css/all.css"/>
     <link rel="stylesheet" href="./CSS/altera_color.CSS">
     <link rel="stylesheet" href="./CSS/comments.css">
+    <link rel="stylesheet" href="./CSS/img_ajustment.CSS">
+
   </head>
   <body>
     
@@ -65,7 +67,7 @@ $avaliacoes = $pesquisa->avaliacoes($livro);
           <div class="col-md-6">
             <div class="d-flex justify-content-center">
               <img
-                class="d-block w-50 mb-4 mt-4"
+                class="d-block w-50 mb-4 mt-4 central_img"
                 <?php echo "src='./Books_imgs/imgs/".$fotos[0]["Nome_BookImg"]."'"?>
                 id="imgPr"
                 style='height: 400px;'

@@ -1,5 +1,5 @@
 <?php
-require_once "../classes/Livro.php";
+require_once "./classes/Livro.php";
 
 //pegando dados do form
 $nome = $_POST["nome"];
@@ -17,7 +17,7 @@ $descricao = $_POST["descricao"];
 $fotos = $_FILES["arquivos"];
 
 //criando objeto
-$Livro = new Livro("bookspace", "localhost", "root", "");
+$Livro = new Livro("bookspace", "localhost", "root", "root");
 
 //cadastrando livro
 $Livro->novoLivro($nome, $autor, $editora, $genero, $idioma, $pag, $peso, $altura, $ediçao, $ano, $valor, $fotos, $_SESSION["usuario"], $descricao );

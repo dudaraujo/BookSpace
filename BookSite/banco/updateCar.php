@@ -1,10 +1,10 @@
 <?php
 
-require_once "../classes/Carrinho.php";
+require_once "./classes/Carrinho.php";
 
 if (!isset($_POST["carriho"])){
 $car = $_POST["carrinho"];
-$carrinho = new Carrinho("bookspace", "localhost", "root", "");
+$carrinho = new Carrinho("bookspace", "localhost", "root", "root");
 
 $carrinho->apagar($car);
 

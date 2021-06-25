@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "classes/Pesquisa.php";
-$pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+$pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
 
 $busca = $pesquisa->allBooks();
 $recomendacao = $pesquisa->recomendacao();
@@ -24,6 +24,8 @@ $ge = $pesquisa->randGenero();
     <link rel="stylesheet" href="style/css/style.css" />
 
     <link rel="stylesheet" href="./node_modules/font-awesome/css/all.css"/>
+    
+    <link rel="stylesheet" href="./CSS/img_ajustment.CSS">
 
   </head>
   <body>
@@ -77,7 +79,7 @@ $ge = $pesquisa->randGenero();
                   echo "
                   <div class='col-3 float-left'>
                     <img
-                    class='d-block w-50'
+                    class='d-block w-50 loop_img'
                     src='./Books_imgs/imgs/".$busca[$hist[$ab] - 1]["Nome_BookImg"]."'
                     alt='3'
                     style='cursor:pointer;'
@@ -172,7 +174,7 @@ $ge = $pesquisa->randGenero();
                   <div class='col-3 float-left'>
                   
                     <img
-                    class='d-block w-50'
+                    class='d-block w-50 loop_img'
                     src='./Books_imgs/imgs/".$busca[$abc]["Nome_BookImg"]."'
                     alt='3'
                     style='cursor:pointer;'

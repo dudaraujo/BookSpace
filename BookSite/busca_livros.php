@@ -3,7 +3,7 @@
 session_start();
 require_once "classes/Pesquisa.php";
 
-$pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+$pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
 // a var cou é um contador de anuncios
 $cou = 0;
 

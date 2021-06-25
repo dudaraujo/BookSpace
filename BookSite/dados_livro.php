@@ -6,12 +6,12 @@ if (!isset($_POST['livro'])){
 }else{
 //generos do banco
   require_once "classes/Pesquisa.php";
-  $generos = new Pesquisa("bookspace", "localhost", "root", "");
+  $generos = new Pesquisa("bookspace", "localhost", "root", "root");
   $lista = $generos->generos();
 
 //parte do livro
   require_once('classes/Pesquisa.php');
-  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
+  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
 
   $livro = $_POST['livro'];
   $info = $pesquisa->dadosLivro($livro);

@@ -2,7 +2,7 @@
 session_start();
 require_once "classes/Chat.php";
 
-$chat = new Chat("bookspace","localhost","root","");
+$chat = new Chat("bookspace","localhost","root","root");
 
 if(!isset($_SESSION['usuario'])){
   header("location:home.php");

@@ -31,7 +31,7 @@ session_start();
           <a href="home.php"><img src="./Books_imgs/little_book.png" class="img-fluid" alt="book" /></a>
         </div>
         <div class="written">
-          <h1 class="vish text-light">BookSpace</h1>
+          <h1 class="title text-light">BookSpace</h1>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ session_start();
               class="form-control form-control-lg"
               id="email"
               aria-describedby="emailHelp"
-              placeholder="e-mail/usuário"
+              placeholder="Email"
               name="email"
             />
           </div>
@@ -69,7 +69,7 @@ session_start();
               type="password"
               class="form-control form-control-lg"
               id="password"
-              placeholder="senha"
+              placeholder="Senha"
               name="senha"
             />          
           </div>
@@ -79,11 +79,8 @@ session_start();
           ><br />
 
           <div class="under_enter animate-up">
-            <div class="text-left">
+            <div class="text-center">
               <a href="Cadastro.php" class="text-light"> Criar conta </a>
-            </div>
-            <div class="text-right">
-              <a href="#" class="text-light"> Esqueceu a senha ? </a>
             </div>
           </div>
         </form>
