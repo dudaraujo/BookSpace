@@ -62,7 +62,7 @@ if (!isset($_SESSION["usuario"])){
                                     <input type='hidden' name='livro' value='".$carrinho[$i]["cod_livro"]."'>
                                     </form>
                                   <form method='post' action='banco/updateCar.php'>
-                                    <button type='submit' class='btn btn-outline-danger btn-block'>
+                                    <button type='submit' class='btn btn-outline-danger btn-block' data-toggle='modal' data-target='#modalExcluir'>
                                         <i class='fa fa-trash'></i>
                                     </button>   
                                     <input type='hidden' value='".$carrinho[$i]["cod_carrinho"]."' name='carrinho'>
@@ -82,6 +82,19 @@ if (!isset($_SESSION["usuario"])){
 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Livro excluido com sucesso.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>

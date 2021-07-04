@@ -153,6 +153,10 @@ $avaliacoes = $pesquisa->avaliacoes($livro);
 
                 <button type='button' class="btn btn-primary mr-5" data-toggle="modal" data-target="#exampleModalCenter">
                 Avaliar</button>
+                
+                <a href="./reclamacao.php"class="btn btn-primary mr-5">
+                Reclamação
+                </a>
 
                 </div>
 
