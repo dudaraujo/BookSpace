@@ -5,7 +5,7 @@ if (!isset($_SESSION["usuario"])){
   header("location:login.php");
 }else{
   require_once('classes/Pesquisa.php');
-  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "root");
+  $pesquisa = new Pesquisa("bookspace", "localhost", "root", "");
   $id = $_SESSION['usuario'];
   $carrinho = $pesquisa->carrinho($id);
   $total = 0;
@@ -61,12 +61,14 @@ if (!isset($_SESSION["usuario"])){
                                     <button type='submit' class='btn btn-outline-primary btn-block mb-3'>Ver anúncio</button>  
                                     <input type='hidden' name='livro' value='".$carrinho[$i]["cod_livro"]."'>
                                     </form>
-                                  <form method='post' action='banco/updateCar.php'>
-                                    <button type='submit' class='btn btn-outline-danger btn-block'>
+
+                                    <form method='post' action='banco/updateCar.php' id='form-des'>
+                                    <button type='button' class='btn btn-outline-danger btn-block' data-toggle='modal' data-target='#modalExcluir'>
                                         <i class='fa fa-trash'></i>
-                                    </button>   
+                                    </button>  
                                     <input type='hidden' value='".$carrinho[$i]["cod_carrinho"]."' name='carrinho'>
-                                  </form>                         
+                                    </form> 
+                                    
                             </div>
                         </div>                       
                   </div>      
@@ -81,7 +83,28 @@ if (!isset($_SESSION["usuario"])){
        </div>
 
   </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h5 class='ml-2'>Você deseja mesmo retirar da lista?</h5>
+      </div>
+      <div class="modal-footer">
 
+		    <button type="submit" class="btn btn-outline-primary btn-block" onclick='teste()'>Sim</button>
+        <button type="button" class="btn btn-outline-danger btn-block" data-dismiss="modal">Não</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function teste(){
+  var form = document.querySelector("form#form-des")
+  form.submit()
+}
+</script>
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/Popper.js/dist/umd/popper.js"></script>

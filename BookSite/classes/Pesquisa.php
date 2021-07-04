@@ -8,7 +8,7 @@ function pesquisar($b){
         $res = array();
 
         if (!empty($b)){
-        $cmd = $this->banco->query("select * from busca where nome_livro like '$t' 
+        $cmd = $this->banco->query("select * from livro where nome_livro like '$t' 
         group by cod_livro");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         }
