@@ -1,5 +1,5 @@
 <?php
-require_once "../classes/Livro.php";
+require_once "./classes/Livro.php";
 
 //pegando dados do form
 $nome = $_POST["nome"];
